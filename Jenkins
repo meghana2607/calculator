@@ -17,7 +17,7 @@ pipeline
             steps 
             {
                 bat label:'',script:'mvnw compile'
-                echo "Test succesful"'
+                echo "Test succesful";
             }
         }
         stage('Build') 
