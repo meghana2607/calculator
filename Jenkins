@@ -16,7 +16,7 @@ pipeline
         {
             steps 
             {
-                bat label:'',script:'mvnw compile'
+                bat label:'',script:'maven compile'
                 echo "Test succesful";
             }
         }
@@ -24,8 +24,8 @@ pipeline
         {
             steps 
             {
-            bat label: '',script:'mvnw clean'
-            bat label:'',script:'mvnw package'
+            bat label: '',script:'maven clean'
+            bat label:'',script:'maven package'
                 echo "build succesful";
              }
           } 
@@ -33,7 +33,7 @@ pipeline
         {
             steps 
             {
-            bat label:'',script:'mvnw test'
+            bat label:'',script:'maven test'
                 echo "test succesful";
              }
           }   
