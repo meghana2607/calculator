@@ -16,7 +16,7 @@ pipeline
         {
             steps 
             {
-                bat 'java test_calculator.java'
+                bat label: '',script:'mvn compile'
                 echo "Test succesful";
             }
         }
@@ -24,8 +24,8 @@ pipeline
         {
             steps 
             {
-            bat label: '',script:'mvnw clean'
-            bat label:'',script:'mvnw package'
+            bat label: '',script:'mvn clean'
+            bat label:'',script:'mvn package'
                 echo "build succesful";
              }
           } 
@@ -33,7 +33,7 @@ pipeline
         {
             steps 
             {
-            bat label:'',script:'mvnw test'
+            bat label:'',script:'mvn test'
                 echo "test succesful";
              }
           }   
