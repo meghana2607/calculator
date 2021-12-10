@@ -12,18 +12,7 @@ pipeline
                echo"checkout successful";
                }
         }
-        stage('Testing Stage') 
-        {
-            steps 
-            {
-                echo"Entered Testing Stage"
-                bat 'java test_calculator.java'
-                echo"confirmation stage"
-                bat "java run_tests.java'
-           
-      
-            }
-        }
+       
       }
  }
       
