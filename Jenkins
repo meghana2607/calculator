@@ -4,28 +4,39 @@ pipeline
     stages
     {
 
-        stage('Build')
+        stage('Git-checkout')
         {
             steps 
             {
-                echo 'Build app'
+               git url:'https://github.com/meghana2607/calculator.git'
+               echo"checkout successful";
+               }
+        }
+        stage('Compile') 
+        {
+            steps 
+            {
+                bat label:'',script:'mvnw compile'
+                echo "Test succesful"'
             }
         }
-        stage('Test') 
+        stage('Build') 
         {
             steps 
             {
-                echo 'Test app'
-            }
-        }
-        stage('Deploy') 
+            bat label: '',script:'mvnw clean'
+            bat label:'',script:'mvnw package'
+                echo "build succesful";
+             }
+          } 
+           stage('Test') 
         {
             steps 
             {
-                echo 'Deploy app'
-            }
-                
-            }
-        }    
+            bat label:'',script:'mvnw test'
+                echo "test succesful";
+             }
+          }   
+       }
+ }
       
-    }
