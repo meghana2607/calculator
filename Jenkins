@@ -12,31 +12,18 @@ pipeline
                echo"checkout successful";
                }
         }
-        stage('Compile') 
+        stage('Testing Stage') 
         {
             steps 
             {
-                bat label: '',script:'mvn compile'
-                echo "Test succesful";
+                echo"Entered Testing Stage"
+                bat 'java test_calculator.java'
+                echo"confirmation stage"
+                bat "java run_tests.java'
+           
+      
             }
         }
-        stage('Build') 
-        {
-            steps 
-            {
-            bat label: '',script:'mvn clean'
-            bat label:'',script:'mvn package'
-                echo "build succesful";
-             }
-          } 
-           stage('Test') 
-        {
-            steps 
-            {
-            bat label:'',script:'mvn test'
-                echo "test succesful";
-             }
-          }   
-       }
+      }
  }
       
