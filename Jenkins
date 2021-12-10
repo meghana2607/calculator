@@ -16,7 +16,7 @@ pipeline
         {
             steps 
             {
-                bat label:'',script:'mvnw compile'
+                bat 'java test_calculator.java'
                 echo "Test succesful";
             }
         }
