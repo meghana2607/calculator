@@ -4,14 +4,6 @@ pipeline
     stages
     {
 
-        stage('Git-checkout')
-        {
-            steps 
-            {
-               git url:'https://github.com/meghana2607/calculator.git'
-               echo"checkout successful";
-               }
-        }
         stage('Compile') 
         {
             steps 
