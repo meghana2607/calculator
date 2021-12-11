@@ -4,6 +4,14 @@ pipeline
     stages
     {
 
+        stage('Git-checkout')
+        {
+            steps 
+            {
+               git url:'https://github.com/meghana2607/calculator.git'
+               echo"checkout successful";
+               }
+        }
         stage('Compile') 
         {
             steps 
@@ -16,7 +24,7 @@ pipeline
         {
             steps 
             {
-           
+            bat label: '',script:'mvn clean
                 echo "build succesful";
              }
           } 
@@ -24,11 +32,9 @@ pipeline
         {
             steps 
             {
-            
+            bat label:'',script:'mvn test'
                 echo "test succesful";
              }
           }   
        }
- }
-      
  
