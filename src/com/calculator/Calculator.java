@@ -1,4 +1,4 @@
-package com.calculator
+package com.calculator;
 
 import java.awt.EventQueue;
 
