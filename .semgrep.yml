@@ -1,0 +1,7 @@
+rules:
+  - id: example-rule
+    patterns:
+      - pattern: $X == $X
+    message: "Comparison to self is always true"
+    languages: [java]
+    severity: WARNING
