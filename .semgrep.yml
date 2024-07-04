@@ -30,10 +30,14 @@ rules:
     severity: WARNING
 
   - id: no-empty-catch
-    pattern: |
-      catch ($E $e) {
-        // empty catch block
-      }
+    patterns:
+      - pattern: |
+          catch ($E $e) {
+          }
+      - pattern: |
+          catch ($E $e) {
+            // empty catch block
+          }
     message: "Empty catch blocks can hide exceptions and make debugging difficult."
     languages: [java]
     severity: WARNING
@@ -58,3 +62,4 @@ rules:
     message: "Avoid bare return statements; specify a return value if possible."
     languages: [java]
     severity: WARNING
+
